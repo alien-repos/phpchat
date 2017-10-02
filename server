@@ -1,0 +1,44 @@
+<?php
+
+class Server
+{
+	private $ipPortDefault;
+	private $userSetIpPort;
+
+	public function __construct($userSetIpPort)
+	{
+		$this->ipPortDefault = '0.0.0.0:90';
+		$this->userSetIpPort = $userSetIpPort;
+		$this->serve();
+	}
+
+	public function greetMessage()
+	{
+		echo "======================================================= \n";
+		echo "                     APPLICATION \n";
+		echo "======================================================= \n";
+	}
+
+    public function startServer(string $ipV4, int $port)
+    {
+		echo "Server starting at http://" . $ipV4 . ":" . $port . "\n";
+        exec('sudo php -S ' . $ipV4 . ':' . $port);
+    }
+
+    public function getArguments() : array
+    {
+		return explode(':', (isset($this->userSetIpPort) ? $this->userSetIpPort : $this->ipPortDefault));
+    }
+
+    public function serve() : void
+    {
+    	$ipPort = $this->getArguments();
+    	$this->ip = (string)$ipPort[0];
+		$this->port = (int)$ipPort[1];
+		$this->startServer($this->ip, $this->port);
+    }
+}
+
+$server = new Server();
+$server->greetMessage();
+
