@@ -1,11 +1,11 @@
 <?php
 
+session_start();
+
 require_once('rules.php');
 
-// if logged in redirect to dashboard
-// else redirect to login
-
-if (isset($_SESSION['test']) && ($_SESSION['test'] == 'dfasdfasdfasdf')) {
-    require_once('Location: , dashboard.php');
+if (isset($_SESSION['test'])) {
+    header('Location: dashboard.php');
+} else {
+    header('Location: login.php');
 }
-    require_once('Location: , login.php');

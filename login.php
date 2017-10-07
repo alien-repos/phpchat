@@ -6,27 +6,52 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </head>
-<body>
+<style type="text/css">
+	.login_box {
+		margin-top: 165px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		border: 1px solid;
+		box-shadow: 10px 10px 5px #888888;
+		background: #009688;
+		width: 402px;
+		height: 290px;
+		border-radius: 5px;
+	}
 
-	<div class="container">
-		<h2>Vertical (basic) Form</h2>
+	.login_field {
+		margin-bottom: 10px;
+		height: 27px;
+		width: 273px;
+		font-size: 12px;
+		color: #000;
+	}
+
+	.login_submit {
+    padding: 10px 114px;
+    color: #000;
+    font-size: 18px;
+    }
+
+</style>
+<body style="background-image: url('public/bg.jpg');">
+
+	<div class="login_box">
+		<h2 style="color: #fff">L O G I N</h2>
 		<form method="POST" action="verify.php">
-			<div class="form-group">
-				<label for="pwd">Password:</label>
-				<input type="password" class="form-control" name="pwd_1" placeholder="Enter password">
+			<div>
+				<input type="password" class="login_field" name="pwd_1" placeholder="Enter username">
 			</div>
-			<div class="form-group">
-				<label for="pwd">Password:</label>
-				<input type="password" class="form-control" name="pwd_2" placeholder="Enter password">
+			<div>
+				<input type="password" class="login_field" name="pwd_2" placeholder="Enter password 1">
 			</div>
-			<div class="form-group">
-				<label for="pwd">Password:</label>
-				<input type="password" class="form-control" name="pwd_3" placeholder="Enter password">
+			<div>
+				<input type="password" class="login_field" name="pwd_3" placeholder="Enter password 2">
 			</div>
-			<div class="checkbox">
-				<label><input type="checkbox"> Remember me</label>
+			<div>
+				<button type="submit" class="login_submit">Login</button>
 			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
 	</div>
 

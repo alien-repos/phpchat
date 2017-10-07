@@ -1,44 +1,36 @@
 <?php
 
-class Server
+const IP_PORT_DEFAULT = '0.0.0.0:90';
+
+$userInput = isset($argv[1]) ? $argv[1] : IP_PORT_DEFAULT;
+main($userInput);
+// greetMessage();
+
+function greetMessage() : void
 {
-	private $ipPortDefault;
-	private $userSetIpPort;
-
-	public function __construct($userSetIpPort)
-	{
-		$this->ipPortDefault = '0.0.0.0:90';
-		$this->userSetIpPort = $userSetIpPort;
-		$this->serve();
-	}
-
-	public function greetMessage()
-	{
-		echo "======================================================= \n";
-		echo "                     APPLICATION \n";
-		echo "======================================================= \n";
-	}
-
-    public function startServer(string $ipV4, int $port)
-    {
-		echo "Server starting at http://" . $ipV4 . ":" . $port . "\n";
-        exec('sudo php -S ' . $ipV4 . ':' . $port);
-    }
-
-    public function getArguments() : array
-    {
-		return explode(':', (isset($this->userSetIpPort) ? $this->userSetIpPort : $this->ipPortDefault));
-    }
-
-    public function serve() : void
-    {
-    	$ipPort = $this->getArguments();
-    	$this->ip = (string)$ipPort[0];
-		$this->port = (int)$ipPort[1];
-		$this->startServer($this->ip, $this->port);
-    }
+    echo "";
 }
 
-$server = new Server();
-$server->greetMessage();
+function main($ipPort)
+{
+    serve($ipPort);
+}
 
+function serve(string $ipPort) : void
+{
+    $ipPort = getArguments($ipPort);
+    $ip = (string)$ipPort[0];
+    $port = (int)$ipPort[1];
+    startServer($ip, $port);
+}
+
+function getArguments(string $ipPort) : array
+{
+    return explode(':', $ipPort);
+}
+
+function startServer(string $ipV4, int $port) : void
+{
+    echo "Server starting at http://" . $ipV4 . ":" . $port . "\n";
+    exec('sudo php -S ' . $ipV4 . ':' . $port);
+}
