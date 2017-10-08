@@ -39,51 +39,73 @@ if (!isset($_SESSION['test'])) {
 		color: #fff;
 		display: inline;
 		margin-top: -2px;
-    list-style: none;
-    float: right;
-    padding-right: 20px;
+		list-style: none;
+		float: right;
+		padding-right: 20px;
 	}
 
 	.right_nav {
 		float: right;
 		background: #fff;
-    width: 80%;
-    height: 100%;
+		width: 80%;
+		height: 95%;
 	}
 
-		.left_nav {
-			float: left;
+	.left_nav {
+		float: left;
 		background: #fff;
-    width: 20%;
-    height: 100%;
-    overflow: scroll;
+		width: 20%;
+		height: 95%;
+		overflow: scroll;
 	}
 
 	.user_list {
-		    line-height: 40px;
-    list-style: none;
-    margin-left: -34px;
-    margin-right: auto;
-    text-align: left;	
+		line-height: 40px;
+		list-style: none;
+		margin-left: -34px;
+		margin-right: auto;
+		text-align: left;	
 	}
 
 	.user_list > li {
-		    background: #fff;
-    border: 2px solid #fff;
-    padding: 7px;
-    border-bottom: 1px solid #ccc;
+		background: #fff;
+		border: 2px solid #fff;
+		padding: 7px;
+		border-bottom: 1px solid #ccc;
 	}
 
 	.user_img {
 		width: 32px;
-    height: 32px;
-    margin-bottom: -10px;
+		height: 32px;
+		margin-bottom: -10px;
+	}
+
+	.msg_reciever {
+		height: 70%;
+		background: #fff;
+	}
+
+	.msg_sender {
+		height: 30%;
+		background: #ccc;
+	}
+
+	.msg_sender_text {
+		width: 89%;
+	}
+
+	.sender_btn {
+		        width: 10%;
+    height: 167px;
+    float: right;
 	}
 
 	body {
-		    display: flex;
-    margin: 0px ;
+		display: flex;
+		margin: 0px ;
 	}
+
+
 </style>
 <body>
 
@@ -100,21 +122,38 @@ if (!isset($_SESSION['test'])) {
 		</div>
 
 		<div class="left_nav">
-				<ul class="user_list">
+			<ul class="user_list">
 				<?php
                 $variable = range(0, 100);
                 foreach ($variable as $key => $value) {
                     echo "<li> <img src='public/bg.png' class='user_img'> string </li>";
                 }
                 ?>
-                </ul>
+			</ul>
 		</div>
 
 		<div class="right_nav">
 			
-		<h1> Hi <?php echo($_SESSION['test']) ?>, Welcome to dahsboard </h1>
+			<div class="msg_reciever">
+				
+			</div>
+
+			<div class="msg_sender">
+				<textarea rows="10" class="msg_sender_text" id="msg_text">
+				</textarea>
+			<button class="sender_btn" onclick="sendMessage()">send</button>
+			</div>
+
+			<!-- <h1> Hi <?php echo($_SESSION['test']) ?>, Welcome to dahsboard </h1> -->
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		function sendMessage() {
+			// var msg = getElementById("msg_text").html();
+			alert('sdfsdf');
+		}
+	</script>
 
 
 </body> 
