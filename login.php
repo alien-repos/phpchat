@@ -14,7 +14,7 @@
 		text-align: center;
 		border: 1px solid;
 		box-shadow: 10px 10px 5px #888888;
-		/*background: #009688;*/
+		background: #009688;
 		width: 30%;
 		height: 290px;
 		border-radius: 5px;

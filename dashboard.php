@@ -84,7 +84,7 @@ if (!isset($_SESSION['user_session'])) {
 		display: inline-block;
 		width: 100%;
 		height: 53px;
-		/*background: #009688;*/
+		background: #009688;
 	}
 
 	.nav_items > li {
@@ -103,13 +103,13 @@ if (!isset($_SESSION['user_session'])) {
 		height: 95%;
 	}
 
-/*	.left_nav {
+	.left_nav {
 		float: left;
 		background: #fff;
 		width: 20%;
 		height: 95%;
 		overflow: scroll;
-	}*/
+	}
 
 	.user_list {
 		line-height: 40px;
