@@ -1,59 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<!-- 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <title>C H A T</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<style type="text/css">
-	.login_box {
-		margin-top: 165px;
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
-		border: 1px solid;
-		box-shadow: 10px 10px 5px #888888;
-		background: #009688;
-		width: 30%;
-		height: 290px;
-		border-radius: 5px;
-	}
+<body style="background-image: url('http://78.media.tumblr.com/34c0b0eff35fd0a69aa9ac91eb169b2e/tumblr_inline_nilpg1tCnX1rb3pzn.png');">
 
-	.login_field {
-		margin-bottom: 10px;
-		height: 27px;
-		width: 85%;
-		font-size: 12px;
-		color: #000;
-	}
+<div class="container">
+  <h2 style="text-align: center; color: #fff">C H A T</h2>
+  <form class="form-horizontal" method="POST" action="verify.php">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user" style="color: #fff">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="user" placeholder="Name" name="user">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd" style="color: #fff">Password 1:</label>
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="pwd_2" placeholder="Enter password" name="pwd_2">
+      </div>
+    </div>
+        <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd" style="color: #fff">Password 2:</label>
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="pwd_3" placeholder="Enter password" name="pwd_3">
+      </div>
+    </div>
+    <!-- <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember"> Remember me</label>
+        </div>
+      </div> -->
+      <br>
+      <br>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-6 col-sm-10">
+        <button type="submit" class="btn btn-primary btn-block">L O G I N</button>
+      </div>
+    </div>
+  </form>
+</div>
 
-	.login_submit {
-		width: 85%;
-		color: #000;
-		font-size: 100%;
-	}
-
-</style>
-<body style="background-image: url('public/bg.jpg');">
-
-	<div class="login_box">
-		<h2 style="color: #fff">L O G I N</h2>
-		<form method="POST" action="verify.php">
-			<div>
-				<input type="password" class="login_field" name="user" placeholder="Enter username">
-			</div>
-			<div>
-				<input type="password" class="login_field" name="pwd_2" placeholder="Enter password 1">
-			</div>
-			<div>
-				<input type="password" class="login_field" name="pwd_3" placeholder="Enter password 2">
-			</div>
-			<div>
-				<button type="submit" class="login_submit">Login</button>
-			</div>
-		</form>
-	</div>
-
-</body> 
+</body>
 </html>

@@ -35,7 +35,7 @@ function writeChatDataToDBFile(string $fromUser, string $message) : bool
 {
     // username(session name) as file name
     $fileName = 'cht984739485';
-    $date = date('d-m-Y h:i:s');
+    $date = date('h:i:s');
     // prepare data
     $data = '<span class="userhighlight">' . $fromUser . '@[' . $date . '] : </span>' . $message;
     // append data to file
